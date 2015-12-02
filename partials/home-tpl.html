@@ -1,0 +1,19 @@
+<div class="box-wrapper">
+  <div id="box-win">
+    <h3>Choose a category and a level</h3>
+    <ul id="types">
+      <li class="btn-type active" ng-click="setType($event,'animals')">Animals</li><!--
+        --><li class="btn-type" ng-click="setType($event,'sf')">Science-fiction</li>
+      <!-- <li class="btn-type" ng-click="setType($event,'fantastique')">fantastique</li> -->
+    </ul>
+
+    <ul id="levels">
+      <li class="btn-level easy active" ng-click="setLevel($event,8)">Easy</li><!--
+    --><li class="btn-level medium" ng-click="setLevel($event,16)">Middle</li><!--
+    --><li class="btn-level hard" ng-click="setLevel($event,32)">Advanced</li>
+    </ul>
+    <ul >
+      <li class="btn-submit"><a href="#/memory/{{type}}/{{level}}" >PLAY</a></li>
+    </ul>
+  </div>
+</div>

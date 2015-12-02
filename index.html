@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory</title>
+  <link rel="stylesheet" href="../css/exo-main.css">
+  <link rel="stylesheet" href="css/memory.css">
+  <!-- <link rel="stylesheet" href="css/component.css"> -->
+	<script src="../js/lib/angular.min.js"></script>
+	<script src="../js/lib/angular-route.js"></script>
+  <script src="../js/lib/jquery-1.11.2.min.js"></script>
+
+
+  </script>
+</head>
+<body ng-app="memoryApp">
+<header>
+  <section>
+    <div class="wrapper-center">
+    <h1>  <a href="http://localhost/frontend/notebook/angular/memory">Memory</a></h1>
+
+    <div id="to-menu" title="menu">
+      <svg >
+        <polygon class="" points="0,0, 20,0,10,20"/>
+        <polygon class="hidden" points=" 10 0 20 20 0 20"/>
+        Sorry, your browser does not support inline SVG.
+      </svg></div>
+    </div>
+  </section>
+  <section id="sous-menu" class="hidden">
+      <div class="wrapper-center">
+    <ul class="menu">
+      <!-- <li class="btn"><a href="#/exo">Exercise Text</a></li> -->
+      <li class="btn"><a href="#/score">Scores</a></li>
+      <li class="btn"><a href="#/">Menu</a></li>
+    </ul>
+  </div>
+
+  </section>
+</header>
+<section class="wrapper-center" ng-view >
+</section>
+<script>
+  var m={
+      trigger : document.getElementById("to-menu"),
+      target : document.getElementById("sous-menu"),
+      polygon: document.getElementsByTagName('polygon'),
+      showMenu: function(){
+        m.target.classList.toggle("hidden");
+        for(var i=0, lg=m.polygon.length; i<lg; i++){ m.polygon[i].classList.toggle("hidden"); }
+      }
+
+  }
+
+  m.trigger.addEventListener("click", m.showMenu , false);
+
+</script>
+<script type="text/javascript" src="js/custom/app.js"></script>
+<script type="text/javascript" src="js/custom/factories.js"></script>
+<script type="text/javascript" src="js/custom/controllers.js"></script>
+<!-- <script type="text/javascript" src="js/custom/jq.js"></script> -->
+</body>
+</html>

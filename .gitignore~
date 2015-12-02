@@ -1,0 +1,7 @@
+img/
+.sass-cache/
+:.map
+output.css
+scss/
+:
+.gitignore
