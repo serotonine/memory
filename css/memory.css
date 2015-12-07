@@ -109,11 +109,15 @@ transition:opacity 0.5s ;*/ }
 
 /* SCORE*/
 #box-score {
-  text-align: center; }
+  text-align: center;
+  background-color: #f8d664;
+  border-radius: 10px;
+  padding: 5px;
+  max-width: 700px; }
   #box-score table {
     width: 100%;
-    max-width: 700px;
-    background-color: #c3e5cb;
+    border: #f8d664 2px solid;
+    background-color: #f8d664;
     border-radius: 10px;
     padding: 5px;
     border-collapse: collapse; }
@@ -122,9 +126,9 @@ transition:opacity 0.5s ;*/ }
   #box-score td, #box-score th {
     padding: 5px; }
   #box-score tr:nth-child(even) {
-    background-color: #9fd6ac; }
+    background-color: #f6c933; }
   #box-score thead {
-    background-color: #7bc78d;
+    background-color: #ecb80a;
     color: #fff;
     text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25); }
 

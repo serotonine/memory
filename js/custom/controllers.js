@@ -33,7 +33,7 @@ app.controller('memoryCtrl', ['$scope','$rootScope','memoryFactory','utilsFactor
 	$scope.timer=0;
 	$scope.startGame=false;
 	$scope.pseudo = "pseudo";
-	var countTime;
+	var countTime, candPlay=true;
 
 
 	memoryFactory.get().then(
@@ -65,15 +65,29 @@ app.controller('memoryCtrl', ['$scope','$rootScope','memoryFactory','utilsFactor
 			countTime = $interval(function() { $scope.timer++; }, 1000);
 			$scope.startGame =true;
 		}
-		if($scope.carts.length!=2){
-			// e.target.setAttribute("class", "active");
-			angular.element(e.target).addClass("active");
+
+
+
+		if(candPlay && $scope.carts.length!=2){
+			if( !angular.element(e.target).hasClass("active")){
+
+				angular.element(e.target).addClass("active");
 			$scope.carts.push(obj.name);
+		}
+
+
 
 		}
 
 		if($scope.carts.length==2) {
-			if( $scope.carts[0] === $scope.carts[1] ){
+
+
+
+			//SAME CARTS
+			if(candPlay && $scope.carts[0] === $scope.carts[1] ){
+				 console.log("$scope.carts[0] === $scope.carts[1]  : " +  candPlay + " "+ $scope.carts);
+
+				candPlay= false;
 
 				$timeout(function(){
 
@@ -84,6 +98,11 @@ app.controller('memoryCtrl', ['$scope','$rootScope','memoryFactory','utilsFactor
 					$('img[alt='+$scope.carts[0]+']').parent('li').empty().addClass('empty');
 					$scope.winCarts++;
 					$scope.carts=[];
+
+
+
+
+					//CARTON PLEIN
 					if($scope.winCarts== $scope.level/2){
 						$interval.cancel(countTime);
 
@@ -95,10 +114,12 @@ app.controller('memoryCtrl', ['$scope','$rootScope','memoryFactory','utilsFactor
 							"type":$routeParams.type };
 
 						//to do display with smooth
-						$timeout(function(){ 	$scope.success=true; },500);
+						$timeout(function(){ return $scope.success=true; },500);
 
 					}
-				}, 1000);
+					else{ return 	candPlay= true;}
+				}, 900);
+
 				}
 			else{
 
