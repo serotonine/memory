@@ -85,7 +85,6 @@ app.controller('memoryCtrl', ['$scope','$rootScope','memoryFactory','utilsFactor
 
 			//SAME CARTS
 			if(candPlay && $scope.carts[0] === $scope.carts[1] ){
-				 console.log("$scope.carts[0] === $scope.carts[1]  : " +  candPlay + " "+ $scope.carts);
 
 				candPlay= false;
 
