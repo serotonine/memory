@@ -1,0 +1,67 @@
+/* see anim&grafik > toggle burger */
+button#burger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.28571rem;
+  opacity: 0.95;
+  outline: none;
+}
+button#burger:hover {
+  opacity: 1;
+}
+button#burger:active {
+  transition: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.burger-line {
+  display: inline-block;
+  width: 2rem;
+  height: 0.28571rem;
+  background: #fff;
+  border-radius: 0.14286rem;
+  transition: all 0.3s;
+  position: relative;
+}
+.burger-line:before,
+.burger-line:after {
+  display: inline-block;
+  width: 2rem;
+  height: 0.28571rem;
+  background: #fff;
+  border-radius: 0.14286rem;
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  content: "";
+  transform-origin: 0.14286rem center;
+}
+.burger-line:before {
+  top: 0.5rem;
+}
+.burger-line:after {
+  top: -0.5rem;
+}
+
+#burger.xcross .burger-line {
+  background: transparent;
+}
+#burger.xcross .burger-line:before,
+#burger.xcross .burger-line:after {
+  transform-origin: 50% 50%;
+  top: 0;
+  width: 2rem;
+}
+#burger.xcross .burger-line:before {
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+#burger.xcross .burger-line:after {
+  transform: rotate3d(0, 0, 1, -45deg);
+}
