@@ -1,19 +1,4 @@
-:root {
-  --color-sky-25: "#bde7f7";
-  --color-sky-100: "#5bc4eb";
-  --color-green-grass: "#48b334";
-  --color-green-pine: "#249576";
-  --color-white: "#fff";
-  --color-neutral: "#fdfdfd";
-  --color-angel-grey-light: "#e0e3e7";
-  --color-angel-grey-dark: "#595a5c";
-  --color-angel-grey-xdark: "#434445";
-  --color-outremer: "#3822a9";
-  --color-magenta: "#ea3998";
-  --color-red: "#e62b27";
-  --color-orange: "#ea8d56";
-  --color-yellow: "#f9f199";
-}
+
 *,
 *:after,
 *:before {
@@ -27,11 +12,9 @@ body {
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
   color: #4b4b4b;
-  background: var(--color-neutral);
+  background: #fdfdfd";
 }
-h1 {
-  font-family: orange_juice, sans-serif;
-}
+
 ul,
 li {
   margin: 0;
@@ -63,8 +46,7 @@ header section:first-child {
   max-height: 100px;
   margin-top: 63px;
   overflow: hidden;
-  background: #797979;
-  color: #5c5555;
+  background: #595a5c;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) inset;
   -webkit-transition: margin 1s ease;
   transition: margin 1s ease;
